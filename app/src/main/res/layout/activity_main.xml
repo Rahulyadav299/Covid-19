@@ -1,0 +1,539 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/mainact"
+    android:background="@color/bg"
+    tools:context=".MainActivity">
+
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:elevation="5dp"
+        app:cardCornerRadius="8dp"
+        android:id="@+id/card_view_1">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <!--Pie chart to display the data-->
+
+            <org.eazegraph.lib.charts.PieChart
+
+                android:id="@+id/piechart"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:padding="6dp"
+                android:layout_weight="1"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="10dp"
+
+                />
+
+            <!--Creating another linear layout ->
+            <!- to display pie chart details -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginLeft="20dp"
+                android:orientation="vertical"
+                android:gravity="center_vertical"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="15dp"
+                    android:layout_gravity="center_vertical">
+
+                    <!--View to display the yellow color icon-->
+                    <View
+                        android:layout_width="15dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/death"/>
+
+                    <!--Text view to display R -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Deaths Cases"
+                        android:id="@+id/death"
+                        android:paddingLeft="10dp"/>
+
+                </LinearLayout>
+
+                <!--Linear layout to display Python-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="15dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginTop="5dp">
+
+                    <!--View to display the green color icon-->
+                    <View
+                        android:layout_width="15dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/active"/>
+
+                    <!--Text view to display python text -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Active Cases"
+                        android:id="@+id/active"
+                        android:paddingLeft="10dp"/>
+
+                </LinearLayout>
+
+                <!--Linear layout to display C++-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="15dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginTop="5dp">
+
+                    <!--View to display the red color icon-->
+                    <View
+                        android:layout_width="15dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/criticalcase"/>
+
+                    <!--Text view to display C++ text -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Total Cases"
+                        android:id="@+id/tc"
+                        android:paddingLeft="10dp"/>
+
+                </LinearLayout>
+
+                <!--Linear layout to display Java-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="15dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginTop="5dp">
+
+                    <!--View to display the blue color icon-->
+                    <View
+                        android:layout_width="15dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/recovered"/>
+
+                    <!--Text view to display Java text -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Recovered Cases"
+                        android:id="@+id/rec"
+                        android:paddingLeft="10dp"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="290dp"
+        android:layout_below="@+id/card_view_1"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:elevation="5dp"
+        app:cardCornerRadius="8dp"
+        android:id="@+id/card_view_2">
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+           <RelativeLayout
+               android:layout_width="match_parent"
+               android:layout_height="match_parent">
+
+               <TextView
+                   android:layout_width="match_parent"
+                   android:layout_height="25sp"
+                   android:layout_marginTop="5dp"
+                   android:textAlignment="center"
+                   android:textStyle="bold"
+                   android:textSize="20sp"
+                   android:fontFamily="sans-serif-condensed-medium"
+                   android:layout_centerHorizontal="true"
+                   android:text="Global Tracks"
+                   android:id="@+id/tv_globe"
+                   />
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:layout_below="@+id/tv_globe"
+                   android:id="@+id/linear1"
+                   android:padding="10dp"
+                   android:orientation="horizontal">
+                   <TextView
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="Total Cases"
+                       android:layout_marginLeft="3dp"
+                       android:id="@+id/totalcase_tv"
+                       android:layout_marginTop="5dp"
+                       android:fontFamily="sans-serif-light"
+                       android:textStyle="bold"
+                       android:textSize="20sp"/>
+                   <TextView
+                       android:layout_width="fill_parent"
+                       android:layout_height="wrap_content"
+                       android:id="@+id/total_case"
+                       android:textAlignment="textEnd"
+                       android:textColor="@color/colorbutton"
+                       android:text="0"
+                       android:layout_marginRight="3dp"
+                       android:textSize="20sp"
+                       android:layout_marginTop="5dp"
+                       android:textStyle="italic"/>
+
+               </LinearLayout>
+               <View
+                   android:layout_width="match_parent"
+                   android:layout_height="1dp"
+                   android:layout_below="@id/linear1"
+                   android:layout_marginLeft="5dp"
+                   android:layout_marginRight="5dp"
+                   android:background="@color/line"
+                   />
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:id="@+id/linear2"
+                   android:padding="10dp"
+                   android:layout_below="@+id/linear1"
+                   android:orientation="horizontal">
+                   <TextView
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="Active Cases"
+                       android:layout_marginLeft="3dp"
+                       android:id="@+id/activecase_tv"
+                       android:fontFamily="sans-serif-light"
+                       android:layout_marginTop="5dp"
+                       android:textStyle="bold"
+                       android:textSize="20sp"/>
+                   <TextView
+                       android:layout_width="fill_parent"
+                       android:layout_height="wrap_content"
+                       android:id="@+id/active_case"
+                       android:textAlignment="textEnd"
+                       android:textColor="@color/colorbutton"
+                       android:text="0"
+                       android:layout_marginRight="3dp"
+                       android:textSize="20sp"
+                       android:layout_marginTop="5dp"
+                       android:textStyle="italic"/>
+
+               </LinearLayout>
+               <View
+                   android:layout_width="match_parent"
+                   android:layout_height="1dp"
+                   android:layout_below="@id/linear2"
+                   android:layout_marginLeft="5dp"
+                   android:layout_marginRight="5dp"
+                   android:background="@color/line"
+                   />
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:id="@+id/linear3"
+                   android:layout_below="@+id/linear2"
+                   android:padding="10dp"
+                   android:orientation="horizontal">
+                   <TextView
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="Recovered Cases"
+                       android:layout_marginLeft="3dp"
+                       android:id="@+id/recovered_tv"
+                       android:fontFamily="sans-serif-light"
+                       android:layout_marginTop="5dp"
+                       android:textStyle="bold"
+                       android:textSize="20sp"/>
+                   <TextView
+                       android:layout_width="fill_parent"
+                       android:layout_height="wrap_content"
+                       android:id="@+id/recovered_case"
+                       android:textAlignment="textEnd"
+                       android:textColor="@color/colorbutton"
+                       android:text="0"
+                       android:layout_marginRight="3dp"
+                       android:textSize="20sp"
+                       android:layout_marginTop="5dp"
+                       android:textStyle="italic"/>
+
+               </LinearLayout>
+               <View
+                   android:layout_width="match_parent"
+                   android:layout_height="1dp"
+                   android:layout_below="@id/linear3"
+                   android:layout_marginLeft="5dp"
+                   android:layout_marginRight="5dp"
+                   android:background="@color/line"
+                   />
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:id="@+id/linear4"
+                   android:layout_below="@+id/linear3"
+                   android:padding="10dp"
+                   android:orientation="horizontal">
+                   <TextView
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="Death Cases"
+                       android:layout_marginLeft="3dp"
+                       android:fontFamily="sans-serif-light"
+                       android:id="@+id/death_tv"
+                       android:layout_marginTop="5dp"
+                       android:textStyle="bold"
+                       android:textSize="20sp"/>
+                   <TextView
+                       android:layout_width="fill_parent"
+                       android:layout_height="wrap_content"
+                       android:id="@+id/death_case"
+                       android:textAlignment="textEnd"
+                       android:textColor="@color/colorbutton"
+                       android:text="0"
+                       android:layout_marginRight="3dp"
+                       android:textSize="20sp"
+                       android:layout_marginTop="5dp"
+                       android:textStyle="italic"/>
+
+               </LinearLayout>
+               <View
+                   android:layout_width="match_parent"
+                   android:layout_height="1dp"
+                   android:layout_below="@id/linear4"
+                   android:layout_marginLeft="5dp"
+                   android:layout_marginRight="5dp"
+                   android:background="@color/line"
+                   />
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:id="@+id/linear5"
+                   android:padding="10dp"
+                   android:layout_below="@+id/linear4"
+                   android:orientation="horizontal">
+                   <TextView
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="Today Cases"
+                       android:layout_marginLeft="3dp"
+                       android:id="@+id/today_case_tv"
+                       android:fontFamily="sans-serif-light"
+                       android:layout_marginTop="5dp"
+                       android:textStyle="bold"
+                       android:textSize="20sp"/>
+                   <TextView
+                       android:layout_width="fill_parent"
+                       android:layout_height="wrap_content"
+                       android:id="@+id/today_case"
+                       android:textAlignment="textEnd"
+                       android:textColor="@color/colorbutton"
+                       android:text="0"
+                       android:layout_marginRight="3dp"
+                       android:textSize="20sp"
+                       android:layout_marginTop="5dp"
+                       android:textStyle="italic"/>
+
+               </LinearLayout>
+               <View
+                   android:layout_width="match_parent"
+                   android:layout_height="1dp"
+                   android:layout_below="@id/linear5"
+                   android:layout_marginLeft="5dp"
+                   android:layout_marginRight="5dp"
+                   android:background="@color/line"
+                   />
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:id="@+id/linear6"
+                   android:layout_below="@+id/linear5"
+                   android:padding="10dp"
+                   android:orientation="horizontal">
+                   <TextView
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="Today Recovered Cases"
+                       android:layout_marginLeft="3dp"
+                       android:id="@+id/today_recoverd_case_tv"
+                       android:fontFamily="sans-serif-light"
+                       android:layout_marginTop="5dp"
+                       android:textStyle="bold"
+                       android:textSize="20sp"/>
+                   <TextView
+                       android:layout_width="fill_parent"
+                       android:layout_height="wrap_content"
+                       android:id="@+id/today_recovered"
+                       android:textAlignment="textEnd"
+                       android:textColor="@color/colorbutton"
+                       android:text="0"
+                       android:layout_marginRight="3dp"
+                       android:textSize="20sp"
+                       android:layout_marginTop="5dp"
+                       android:textStyle="italic"/>
+
+               </LinearLayout>
+               <View
+                   android:layout_width="match_parent"
+                   android:layout_height="1dp"
+                   android:layout_below="@id/linear6"
+                   android:layout_marginLeft="5dp"
+                   android:layout_marginRight="5dp"
+                   android:background="@color/line"
+                   />
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:id="@+id/linear7"
+                   android:padding="10dp"
+                   android:layout_below="@+id/linear6"
+                   android:orientation="horizontal">
+                   <TextView
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="Today Deaths Cases"
+                       android:layout_marginLeft="3dp"
+                       android:id="@+id/today_death_case_tv"
+                       android:layout_marginTop="5dp"
+                       android:fontFamily="sans-serif-light"
+                       android:textStyle="bold"
+                       android:textSize="20sp"/>
+                   <TextView
+                       android:layout_width="fill_parent"
+                       android:layout_height="wrap_content"
+                       android:id="@+id/today_death"
+                       android:textAlignment="textEnd"
+                       android:textColor="@color/colorbutton"
+                       android:text="0"
+                       android:layout_marginRight="3dp"
+                       android:textSize="20sp"
+                       android:layout_marginTop="5dp"
+                       android:textStyle="italic"/>
+
+               </LinearLayout>
+               <View
+                   android:layout_width="match_parent"
+                   android:layout_height="1dp"
+                   android:layout_below="@id/linear7"
+                   android:layout_marginLeft="5dp"
+                   android:layout_marginRight="5dp"
+                   android:background="@color/line"
+                   />
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:id="@+id/linear8"
+                   android:padding="10dp"
+                   android:layout_below="@+id/linear7"
+                   android:orientation="horizontal">
+                   <TextView
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="Critical Cases"
+                       android:layout_marginLeft="3dp"
+                       android:id="@+id/critical_case_tv"
+                       android:fontFamily="sans-serif-light"
+                       android:layout_marginTop="5dp"
+                       android:textStyle="bold"
+                       android:textSize="20sp"/>
+                   <TextView
+                       android:layout_width="fill_parent"
+                       android:layout_height="wrap_content"
+                       android:id="@+id/critical_case"
+                       android:textAlignment="textEnd"
+                       android:textColor="@color/colorbutton"
+                       android:text="0"
+                       android:layout_marginRight="3dp"
+                       android:textSize="20sp"
+                       android:layout_marginTop="5dp"
+                       android:textStyle="italic"/>
+
+               </LinearLayout>
+               <View
+                   android:layout_width="match_parent"
+                   android:layout_height="1dp"
+                   android:layout_below="@id/linear8"
+                   android:layout_marginLeft="5dp"
+                   android:layout_marginRight="5dp"
+                   android:background="@color/line"
+                   />
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:id="@+id/linear9"
+                   android:layout_below="@+id/linear8"
+                   android:padding="10dp"
+                   android:orientation="horizontal">
+                   <TextView
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="Affected Countries"
+                       android:fontFamily="sans-serif-light"
+                       android:layout_marginLeft="3dp"
+                       android:id="@+id/affected_country_tv"
+                       android:layout_marginTop="5dp"
+                       android:textStyle="bold"
+                       android:textSize="20sp"/>
+                   <TextView
+                       android:layout_width="fill_parent"
+                       android:layout_height="wrap_content"
+                       android:id="@+id/affected_country"
+                       android:textAlignment="textEnd"
+                       android:textColor="@color/colorbutton"
+                       android:text="0"
+                       android:layout_marginRight="3dp"
+                       android:textSize="20sp"
+                       android:layout_marginTop="5dp"
+                       android:textStyle="italic"/>
+
+               </LinearLayout>
+           </RelativeLayout>
+        </ScrollView>
+
+    </androidx.cardview.widget.CardView>
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/progressbar"
+        android:layout_marginBottom="50dp"/>
+
+<Button
+    android:id="@+id/track_btn"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/card_view_2"
+    android:layout_marginTop="5dp"
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp"
+    android:text="Track countries"
+    android:background="@color/colorbutton"
+    android:textColor="#FFF"/>
+</RelativeLayout>

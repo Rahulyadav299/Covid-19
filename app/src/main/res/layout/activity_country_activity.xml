@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/bg"
+    android:layout_height="match_parent"
+    tools:context=".CountryACtivity">
+   <EditText
+       android:layout_width="match_parent"
+       android:layout_height="45dp"
+       android:layout_marginRight="10dp"
+       android:paddingLeft="10dp"
+       android:layout_marginLeft="10dp"
+       android:drawableLeft="@drawable/ic_search_black_24dp"
+       android:layout_marginTop="10dp"
+       android:id="@+id/ediittext"
+       android:inputType="text"
+       android:imeOptions="actionSearch"
+       android:hint="Search Country Name"
+       android:textAlignment="center"
+       android:background="@drawable/curved_shape"/>
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/ediittext"
+        android:layout_marginTop="5dp"
+        android:id="@+id/list_view"/>
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/progressbar"
+        android:layout_marginBottom="50dp"/>
+
+
+</RelativeLayout>
